@@ -12,14 +12,14 @@
 	```sh
 	 git pull
 	```
-2) Build with gradle (clean build without tests for docker-compose):
+2) Pull necessary docker compose images (both postgres and backend)
 	```sh
-	 ./gradlew clean build -x test  
+	docker-compose pull
 	```
 
-3) Rebuild image and run Docker compose (if there was an update):
+3) Run Docker compose (if there was an update):
     ```sh
-     docker-compose up --build -d
+     docker-compose up
     ```    
 step 3 will run two containers backend (on 8080 port) and db (on 5432 port)
 
@@ -29,7 +29,8 @@ step 3 will run two containers backend (on 8080 port) and db (on 5432 port)
 	 ```sh
 		chmod + x gradlew
 	```
-	
+3) Ensure you have java 21
+4) gradle must be 8.13
 ## Database
 I use PostgreSQL running on port 5432 inside a docker container **remitly_postgres_db**
 
