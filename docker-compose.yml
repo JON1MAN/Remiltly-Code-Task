@@ -17,9 +17,7 @@ services:
 
   app:
     restart: always
-    build:
-      context: .
-      dockerfile: Dockerfile
+    image: amrchk/remitly-backend-app:latest
     container_name: remitly_backend
     environment:
       SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/mydatabase
