@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: Remitly-test-task
+
+  datasource:
+    url: "jdbc:postgresql://localhost:5432/mydatabase"
+    username: myuser
+    password: mypassword
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      connection-timeout: 20000
+
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
