@@ -12,6 +12,8 @@
 	```sh
 	 git pull
 	```
+ **If you want to launch both backend and database via docker**
+ 
 2) Pull necessary docker compose images (both postgres and backend)
 	```sh
 	docker-compose pull
@@ -23,6 +25,32 @@
     ```    
 step 3 will run two containers backend (on 8080 port) and db (on 5432 port)
 
+ **If you want to launch backend in your terminal session and database in container**
+ 
+2) Pull necessary docker compose images (both postgres and backend)
+	```sh
+	docker-compose pull
+	```
+
+3) Run Docker compose (if there was an update):
+    ```sh
+     docker-compose up
+    ```
+
+4) Then stop backend container (because it runs with same compose as databse
+   ```sh
+     docker stop remitly_backend
+   ```
+
+5) Build with gradlew:
+   ```sh
+     ./gradlew build
+    ```
+5) Run with gradlew:
+   ```sh
+     ./gradlew bootRun
+    ```
+
 ## Troubleshooting
  1) Ensure Docker is running .
  2) Give right permissions to **gradlew**  file
@@ -30,7 +58,8 @@ step 3 will run two containers backend (on 8080 port) and db (on 5432 port)
 		chmod + x gradlew
 	```
 3) Ensure you have java 21
-4) gradle must be 8.13
+4) gradle version 8.13
+
 ## Database
 I use PostgreSQL running on port 5432 inside a docker container **remitly_postgres_db**
 
