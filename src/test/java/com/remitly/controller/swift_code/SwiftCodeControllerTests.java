@@ -9,6 +9,7 @@ import com.remitly.controller.swift_code.dto.ResponseMessageDTO;
 import com.remitly.controller.swift_code.dto.SwiftCodeBranchDTO;
 import com.remitly.controller.swift_code.dto.SwiftCodeDTO;
 import com.remitly.controller.swift_code.dto.SwiftCodesCountryISO2DTO;
+import com.remitly.service.parser.ExcelParserService;
 import com.remitly.service.swift_code.SwiftCodeService;
 import org.junit.jupiter.api.Test;
 import org.mockito.ArgumentMatchers;
@@ -37,6 +38,9 @@ public class SwiftCodeControllerTests {
 
     @MockitoBean
     private SwiftCodeService swiftCodeService;
+
+    @MockitoBean
+    private ExcelParserService excelParserService;
 
     @Autowired
     private ObjectMapper objectMapper;

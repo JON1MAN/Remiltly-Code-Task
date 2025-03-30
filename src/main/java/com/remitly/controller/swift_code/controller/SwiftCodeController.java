@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.*;
 @RequiredArgsConstructor
 public class SwiftCodeController {
 
-    private final ExcelParserService excelParserService;
+    /*private final ExcelParserService excelParserService;*/
     private final SwiftCodeService swiftCodeService;
 
     @GetMapping("/{swift-code}")
